@@ -33,18 +33,27 @@ export default {
 </script>
 
 <template>
-  <form @submit.prevent="getElements">
-    <input type="text" v-model="ricerca" />
-    <select name="" id="" v-model="repositories">
-      <option value="repositories" selected>repositories</option>
-      <option value=">user">user</option>
-    </select>
-    <input type="submit" value="cerca" />
-  </form>
-
-  <div v-for="number in array">
-    <singlecard :item="number" />
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <form @submit.prevent="getElements">
+          <input type="text" v-model="ricerca" />
+          <select name="" id="" v-model="repositories">
+            <option value="repositories" selected>repositories</option>
+            <option value=">user">user</option>
+          </select>
+          <input type="submit" value="cerca" />
+        </form>
+      </div>
+      <div class="col-12">
+        <div v-for="number in array">
+          <singlecard :item="number" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped lang="scss">
+@import "./../style/general.scss";
+</style>
